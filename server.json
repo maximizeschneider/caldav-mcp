@@ -36,6 +36,13 @@
 					"isRequired": true,
 					"format": "string",
 					"isSecret": true
+				},
+				{
+					"name": "CALDAV_EXTRA_CALENDARS",
+					"description": "Optional comma-separated names, paths, or URLs of extra collections whose calendars list-calendars includes (e.g. group calendars)",
+					"isRequired": false,
+					"format": "string",
+					"isSecret": false
 				}
 			]
 		}

@@ -43,6 +43,8 @@
 }
 ```
 
+Optional: set `CALDAV_EXTRA_CALENDARS` to a comma-separated list of other collections whose calendars `list-calendars` should include, e.g. shared or group calendars. A bare name is resolved next to your own calendar home (EGroupware: `Default` → `…/groupdav.php/Default/`); server paths and full URLs are used as given. Entries that can't be listed are skipped with a warning on stderr. This only adds to what `list-calendars` shows; access is still governed by your account's permissions on the server.
+
 ## Development
 
 ### Quick Start

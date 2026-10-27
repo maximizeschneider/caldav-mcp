@@ -9,7 +9,10 @@ import { registerCreateEvent } from "./tools/create-event.js";
 import { registerCreateTodo } from "./tools/create-todo.js";
 import { registerDeleteEvent } from "./tools/delete-event.js";
 import { registerDeleteTodo } from "./tools/delete-todo.js";
-import { registerListCalendars } from "./tools/list-calendars.js";
+import {
+	parseExtraCalendars,
+	registerListCalendars,
+} from "./tools/list-calendars.js";
 import { registerListEvents } from "./tools/list-events.js";
 import { registerListTodos } from "./tools/list-todos.js";
 import { registerUpdateEvent } from "./tools/update-event.js";
@@ -47,7 +50,11 @@ async function main() {
 	registerUpdateTodo(client, server);
 	registerCompleteTodo(client, server);
 	registerDeleteTodo(client, server);
-	await registerListCalendars(client, server);
+	await registerListCalendars(
+		client,
+		server,
+		parseExtraCalendars(process.env.CALDAV_EXTRA_CALENDARS)
+	);
 
 	// Start receiving messages on stdin and sending messages on stdout
 	const transport = new StdioServerTransport();
